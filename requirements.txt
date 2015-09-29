@@ -1,0 +1,1 @@
+-e git://github.com/gutomaia/pyNES.git@0.2.x#egg=pynes
