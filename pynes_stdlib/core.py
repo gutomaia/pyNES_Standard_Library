@@ -24,3 +24,7 @@ def clear_memory():
         INX +
         BNE clear_memory()
     )
+
+@asm_def
+def infinity_loop():
+    return JMP + infinity_loop()
