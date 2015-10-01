@@ -1,8 +1,16 @@
+"""Core Functions"""
+
 from pynes.lib import asm_def
 from pynes.asm import *
 
 @asm_def
 def wait_vblank():
+    """Wait until vblank is triggered.
+
+    Stops CPU from running by looping instructions
+    until vblank is checked.
+    """
+
     return (
         BIT + '$2002' +
         wait_vblank()
@@ -10,6 +18,13 @@ def wait_vblank():
 
 @asm_def
 def clear_memory():
+    """Clear entire RAM space
+
+    You must set the entire RAM space on system
+    initalization. On the actual hardware, it usually
+    start with some dirty on memory.
+    """
+
     return (
         LDA + 00 +
         STA + ('$0000', X) +
@@ -27,4 +42,9 @@ def clear_memory():
 
 @asm_def
 def infinity_loop():
+    """Loop Forever
+
+    On initialization, you will need to stop the CPU counter
+    from fetching more instructions.
+    """
     return JMP + infinity_loop()
