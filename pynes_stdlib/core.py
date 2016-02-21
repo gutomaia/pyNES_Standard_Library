@@ -13,7 +13,7 @@ def wait_vblank():
 
     return (
         BIT + '$2002' +
-        wait_vblank()
+        BPL + wait_vblank()
     )
 
 @asm_def
