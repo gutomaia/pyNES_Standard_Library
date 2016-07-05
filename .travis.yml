@@ -6,5 +6,6 @@ install:
   - pip install -q -r requirements.txt
   - pip install -q -r requirements_test.txt
 script:
+  - make python.mk
   - make ci
 sudo: false
